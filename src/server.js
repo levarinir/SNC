@@ -20,7 +20,7 @@ app.use('/api/work', workRoutes);
 
 app.use((err, req, res, next) => {
   if (err.name === 'UnauthorizedError') {
-    res.status(401).json({ error: err.name + ': ' + err.message });
+    res.status(401).json({ err: err.name + ': ' + err.message });
   }
 });
 
